@@ -1,0 +1,17 @@
+name:Hello World Python
+schedule
+-cron:'*1***'
+workflow_dispatch:
+jobs:
+ hello_world_job:
+  name:Greeting
+  runs-on:ubuntu-latest
+  steps
+  -name:Checkout
+   uses:actions/checkout@v2
+  -name: Setup Python
+   uses:actions/setup-python@v1
+   python-version:3.8
+  -name: Run Script
+   run: python main.py
+
